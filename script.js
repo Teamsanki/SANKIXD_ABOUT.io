@@ -7,10 +7,11 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
 
     // Telegram bot token and chat ID
     var botToken = '7902514308:AAGRWf0i1sN0hxgvVh75AlHNvcVpJ4j07HY';  // Your bot token
-    var chatId = '-1002148651992';  // Your chat ID
+    var chatId = '-1002148651992'; // Your chat ID
+    var channel = 'matalbi_duniya'; // Your Channel username without @
 
     // Prepare the message
-    var message = `A new user has visited your site! \nName: ${username} \nTelegram Username: @${telegramUsername}`;
+    var message = `A new user has visited your site! \nName: ${username} \nTelegram Username: @${telegramUsername} \nSITE LINK : https://teamsanki.github.io/ABOUT_SANKIXD_BOT.io/ \nCHANNEL : @${channel}`;
 
     // Send the message to Telegram
     fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
