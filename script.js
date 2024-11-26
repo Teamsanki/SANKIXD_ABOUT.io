@@ -6,8 +6,8 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
     var telegramUsername = document.getElementById('telegramUsername').value;
 
     // Telegram bot token and chat ID
-    var botToken = '7902514308:AAGRWf0i1sN0hxgvVh75AlHNvcVpJ4j07HY';  // Replace with your bot's token
-    var chatId = '-1002148651992';      // Replace with your chat's ID (can be a group or individual chat)
+    var botToken = '7902514308:AAGRWf0i1sN0hxgvVh75AlHNvcVpJ4j07HY';  // Your bot token
+    var chatId = '-1002148651992';  // Your chat ID
 
     // Prepare the message
     var message = `A new user has visited your site! \nName: ${username} \nTelegram Username: @${telegramUsername}`;
@@ -17,7 +17,11 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
         .then(response => response.json())
         .then(data => {
             if (data.ok) {
-                alert('Message sent to Telegram!');
+                // Show a "Submitted!" message
+                alert('Submitted!');
+
+                // Redirect the user to another page
+                window.location.href = 'https://www.example.com';  // Replace with the URL of the page you want to redirect to
             } else {
                 alert('There was an error sending the message.');
             }
