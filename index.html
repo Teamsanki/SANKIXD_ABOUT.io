@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Bot - GitHub Page</title>
+    <title>Telegram Bot Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to Music Bot</h1>
-    <p>Enter your details below to explore more!</p>
+    <div class="container">
+        <h1>Welcome to My Telegram Bot Page</h1>
+        <form id="userForm">
+            <label for="username">Enter your Name:</label>
+            <input type="text" id="username" name="username" required>
 
-    <!-- Form to collect name and Telegram username -->
-    <form id="userForm">
-        <input type="text" id="name" placeholder="Enter your name" required>
-        <input type="text" id="username" placeholder="Enter your Telegram username" required>
-        <button type="submit">Submit</button>
-    </form>
+            <label for="telegramUsername">Enter your Telegram Username:</label>
+            <input type="text" id="telegramUsername" name="telegramUsername" required>
 
-    <!-- About Section -->
-    <div class="about" id="aboutSection" style="display: none;">
-        <h2>About Our Music Bot</h2>
-        <p>This bot is designed to enhance your music experience. Create playlists, enjoy music, and more!</p>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 
     <script src="script.js"></script>
