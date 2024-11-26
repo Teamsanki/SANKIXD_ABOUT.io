@@ -1,29 +1,28 @@
-document.getElementById('userForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent default form submission
+document.getElementById('userForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const username = document.getElementById('username').value;
+    // Get the input values
+    var username = document.getElementById('username').value;
+    var telegramUsername = document.getElementById('telegramUsername').value;
 
-    // Send the data to the Google Apps Script endpoint
-    fetch('https://script.google.com/macros/s/your_script_id/exec', {  // Replace with your Apps Script URL
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            name: name,
-            username: username
+    // Telegram bot token and chat ID
+    var botToken = '7902514308:AAGRWf0i1sN0hxgvVh75AlHNvcVpJ4j07HY';  // Replace with your bot's token
+    var chatId = '-1002148651992';      // Replace with your chat's ID (can be a group or individual chat)
+
+    // Prepare the message
+    var message = `A new user has visited your site! \nName: ${username} \nTelegram Username: @${telegramUsername}`;
+
+    // Send the message to Telegram
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                alert('Message sent to Telegram!');
+            } else {
+                alert('There was an error sending the message.');
+            }
         })
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        // Display the "About" section after successful submission
-        document.getElementById('aboutSection').style.display = 'block';
-        alert('Your details have been submitted successfully!');
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while submitting your details.');
-    });
+        .catch(error => {
+            alert('Error: ' + error.message);
+        });
 });
