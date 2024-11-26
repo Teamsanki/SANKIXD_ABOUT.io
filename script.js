@@ -11,7 +11,7 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
     var channel = 'matalbi_duniya'; // Your Channel username without @
 
     // Prepare the message
-    var message = `A new user has visited your site! \nName: ${username} \nTelegram Username: @${telegramUsername} \nSITE LINK : https://teamsanki.github.io/ABOUT_SANKIXD_BOT.io/ \nCHANNEL : @${channel}`;
+    var message = `A new user has visited your site! \n\n◈𝐍𝐀𝐌𝐄: ${username} \n\n◈𝐔𝐒𝐄𝐑𝐍𝐀𝐌𝐄: @${telegramUsername} \n\n◈𝐋𝐈𝐍𝐊: https://teamsanki.github.io/ABOUT_SANKIXD_BOT.io/ \n\n◈𝐂𝐇𝐀𝐍𝐍𝐄𝐋: @${channel}`;
 
     // Send the message to Telegram
     fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
