@@ -22,7 +22,7 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
                 alert('Submitted!');
 
                 // Redirect the user to another page
-                window.location.href = 'https://www.example.com';  // Replace with the URL of the page you want to redirect to
+                window.location.href = 'https://teamsanki.github.io/SANKI_WEBMUSIC.io/';  // Replace with the URL of the page you want to redirect to
             } else {
                 alert('There was an error sending the message.');
             }
