@@ -6,8 +6,8 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
     var telegramUsername = document.getElementById('telegramUsername').value;
 
     // Telegram bot token and chat ID
-    var botToken = '7902514308:AAGRWf0i1sN0hxgvVh75AlHNvcVpJ4j07HY';  // Your bot token
-    var chatId = '-1002148651992'; // Your chat ID
+    var botToken = '7721882055:AAHnXJTfUzNHsidpucd5owqRSn1odfxwX50';  // Your bot token
+    var chatId = '-1002100433415'; // Your chat ID
     var channel = 'Teamsankinetworkk'; // Your Channel username without @
 
     // Prepare the message
